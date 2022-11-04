@@ -1,30 +1,61 @@
-import React, { Component, useState } from "react";
+import _ from "lodash";
+import React, { useState } from "react";
 
 const TodoList = () => {
-  const [name, setName] = useState("");
+  const [todo, setTodo] = useState();
+  const [listTodo, setListTodo] = useState([
+    { id: "todo1", name: "watching youtube" },
+    { id: "todo2", name: "Using facebook" },
+    { id: "todo3", name: "Reading book" },
+  ]);
 
-  const HandleClickBtn = (event, msg) => {
-    console.log(">>> run check button: ", name);
+  const randomIntFromInterval = (min, max) => {
+    return Math.floor(Math.random() * (max - min + 1) + min);
+  };
+
+  const handleClickBtn = () => {
+    let todoId = randomIntFromInterval(4, 999999);
+    let todoItem = {
+      id: `todo ${todoId}`, // string template
+      name: todo,
+    };
+
+    let currentTodoList = _.clone(listTodo);
+    currentTodoList.push(todoItem);
+    setListTodo(currentTodoList);
+
+    // setListTodo([...listTodo, todoItem]); // spread operator
+  };
+
+  const handleDeleteTodo = (id) => {
+    let currentTodoList = _.clone(listTodo);
+    currentTodoList = currentTodoList.filter((item) => item.id !== id);
+    setListTodo(currentTodoList);
   };
 
   return (
     <div className="">
-      <label htmlFor="">Name</label>
+      <label htmlFor="">Todo's Name: </label>
       <input
         type="text"
-        value={name}
+        value={todo}
         onChange={(event) => {
-          setName(event.target.value);
+          setTodo(event.target.value);
         }}
       />
-      <button
-        type="button"
-        onClick={(event) => HandleClickBtn(event, "buttonClick")}
-      >
+      <button type="button" onClick={() => handleClickBtn()}>
         Submit
       </button>
       <br /> <br />
-      Hello Todo List name = {name}
+      <div>--------- List Todo --------- </div>
+      {listTodo.map((item, index) => {
+        console.log(">>> check item: ", item, index);
+        return (
+          <div key={item.id} onClick={() => handleDeleteTodo(item.id)}>
+            {item.name}
+          </div>
+        );
+      })}
     </div>
   );
 };
