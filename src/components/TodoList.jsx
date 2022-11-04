@@ -7,7 +7,6 @@ class TodoList extends Component {
   };
 
   // gán lại giá trị cho state
-
   render() {
     return (
       <div>
