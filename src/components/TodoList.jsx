@@ -1,30 +1,11 @@
 import React, { Component, useState } from "react";
 
-// class TodoList extends Component {
-//   // khai báo state
-//   state = {
-//     name: "",
-//   };
-
-//   // gán lại giá trị cho state
-//   render() {
-//     return (
-//       <div>
-//         <label>Name</label>
-//         <input
-//           type="text"
-//           onChange={(event) => this.setState({ name: event.target.value })}
-//         />
-//         <br />
-//         <br />
-//         Hello Todo List name = {this.state.name}
-//       </div>
-//     );
-//   }
-// }
-
 const TodoList = () => {
   const [name, setName] = useState("");
+
+  const HandleClickBtn = (event, msg) => {
+    console.log(">>> run check button: ", name);
+  };
 
   return (
     <div className="">
@@ -32,8 +13,16 @@ const TodoList = () => {
       <input
         type="text"
         value={name}
-        onChange={(event) => setName(event.target.value)}
+        onChange={(event) => {
+          setName(event.target.value);
+        }}
       />
+      <button
+        type="button"
+        onClick={(event) => HandleClickBtn(event, "buttonClick")}
+      >
+        Submit
+      </button>
       <br /> <br />
       Hello Todo List name = {name}
     </div>
