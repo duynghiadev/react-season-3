@@ -1,13 +1,17 @@
 import logo from "./logo.svg";
 import "./App.css";
+import TodoList from "./components/TodoList";
 
+// function component
 const App = () => {
-  // function component
   return (
     <div className="App">
       <header className="App-header">
         <img src={logo} className="App-logo" alt="logo" />
-        <p>Hello React With Duy Nghia and Ku Nhi</p>
+        <p>Hello React With Duy Nghia</p>
+
+        <TodoList />
+
         <a
           className="App-link"
           href="https://reactjs.org"
