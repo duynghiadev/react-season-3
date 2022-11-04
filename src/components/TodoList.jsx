@@ -1,5 +1,7 @@
 import _ from "lodash";
-import React, { useState } from "react";
+import { useState } from "react";
+import AddTodo from "./AddTodo";
+import DisplayTodo from "./DisplayTodo";
 
 const TodoList = () => {
   const [todo, setTodo] = useState();
@@ -14,6 +16,10 @@ const TodoList = () => {
   };
 
   const handleClickBtn = () => {
+    if (!todo) {
+      alert("Todo name is not empty");
+    }
+
     let todoId = randomIntFromInterval(4, 999999);
     let todoItem = {
       id: `todo ${todoId}`, // string template
@@ -23,6 +29,7 @@ const TodoList = () => {
     let currentTodoList = _.clone(listTodo);
     currentTodoList.push(todoItem);
     setListTodo(currentTodoList);
+    setTodo("");
 
     // setListTodo([...listTodo, todoItem]); // spread operator
   };
@@ -33,8 +40,11 @@ const TodoList = () => {
     setListTodo(currentTodoList);
   };
 
+  const myInfor = { channel: "hoidanit", age: 20 };
+  // props, state: object (key: value)
   return (
-    <div className="">
+    <div>
+      <AddTodo />
       <label htmlFor="">Todo's Name: </label>
       <input
         type="text"
@@ -47,15 +57,11 @@ const TodoList = () => {
         Submit
       </button>
       <br /> <br />
-      <div>--------- List Todo --------- </div>
-      {listTodo.map((item, index) => {
-        console.log(">>> check item: ", item, index);
-        return (
-          <div key={item.id} onClick={() => handleDeleteTodo(item.id)}>
-            {item.name}
-          </div>
-        );
-      })}
+      <DisplayTodo
+        listTodo={listTodo}
+        name={"duynghia"}
+        address={{ myInfor }}
+      />
     </div>
   );
 };
