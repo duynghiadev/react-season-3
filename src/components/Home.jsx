@@ -3,7 +3,7 @@ import { useState } from "react";
 import AddTodo from "./AddTodo";
 import DisplayTodo from "./DisplayTodo";
 
-const TodoList = () => {
+const Home = () => {
   const [todo, setTodo] = useState();
   const [listTodo, setListTodo] = useState([
     { id: "todo1", name: "watching youtube" },
@@ -44,25 +44,15 @@ const TodoList = () => {
   // props, state: object (key: value)
   return (
     <div>
-      <AddTodo />
-      <label htmlFor="">Todo's Name: </label>
-      <input
-        type="text"
-        value={todo}
-        onChange={(event) => {
-          setTodo(event.target.value);
-        }}
-      />
-      <button type="button" onClick={() => handleClickBtn()}>
-        Submit
-      </button>
+      <AddTodo todo={todo} setTodo={setTodo} handleClickBtn={handleClickBtn} />
       <br /> <br />
       <DisplayTodo
         listTodo={listTodo}
         name={"duynghia"}
         address={{ myInfor }}
+        deleteTodoInParent={handleDeleteTodo}
       />
     </div>
   );
 };
-export default TodoList;
+export default Home;

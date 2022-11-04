@@ -1,7 +1,9 @@
 const DisplayTodo = (props) => {
-  const handleDeleteTodo = () => {};
+  const deleteTodoFromChild = (id) => {
+    props.deleteTodoInParent(id);
+  };
 
-  const listTodo = props.listTodo;
+  const { listTodo } = props;
 
   return (
     <div>
@@ -9,7 +11,7 @@ const DisplayTodo = (props) => {
       {listTodo.map((item, index) => {
         console.log(">>> check item: ", item, index);
         return (
-          <div key={item.id} onClick={() => handleDeleteTodo(item.id)}>
+          <div key={item.id} onClick={() => deleteTodoFromChild(item.id)}>
             {item.name}
           </div>
         );

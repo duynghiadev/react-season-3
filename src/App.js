@@ -1,6 +1,6 @@
 import logo from "./logo.svg";
 import "./App.css";
-import TodoList from "./components/TodoList";
+import Home from "./components/Home";
 
 // function component
 const App = () => {
@@ -10,7 +10,7 @@ const App = () => {
         <img src={logo} className="App-logo" alt="logo" />
         <p>Hello React With Duy Nghia</p>
 
-        <TodoList />
+        <Home />
 
         <a
           className="App-link"
