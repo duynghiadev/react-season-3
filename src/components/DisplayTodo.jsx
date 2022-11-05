@@ -7,7 +7,7 @@ const DisplayTodo = (props) => {
 
   return (
     <div>
-      <div>--------- List Todo --------- </div>
+      <div>---- List Todo ---- </div>
       {listTodo.map((item, index) => {
         console.log(">>> check item: ", item, index);
         return (

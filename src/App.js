@@ -1,26 +1,23 @@
 import logo from "./logo.svg";
 import "./App.css";
 import Home from "./components/Home";
+import AddNewProduct from "./components/AddNewProduct";
 
 // function component
 const App = () => {
   return (
     <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
+      <header className="App-header content-left">
+        <div style={{ textAlign: "center" }}>
+          <img src={logo} className="App-logo" alt="logo" />
+        </div>
         <p>Hello React With Duy Nghia</p>
 
         <Home />
-
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
       </header>
+      <div className="content-right">
+        <AddNewProduct />
+      </div>
     </div>
   );
 };
