@@ -15,12 +15,28 @@ const AddNewProduct = () => {
       size,
       color,
     };
-    console.log(">>> check data: ", object);
+
+    let productList = localStorage.getItem("productList");
+    if (productList) {
+      let arr = JSON.parse(productList);
+      arr.push(object);
+      localStorage.setItem("productList", JSON.stringify(arr));
+    } else {
+      localStorage.setItem("productList", JSON.stringify([object]));
+    }
+
+    setName("");
+    setSize(0);
+    setPrice(0);
+    setColor("");
   };
 
   const handleHideShow = (status) => {
     setIsShowDetail(status);
   };
+
+  localStorage.setItem("name", "eric");
+  localStorage.setItem("channel", "duynghia");
 
   return (
     <div>
@@ -64,25 +80,6 @@ const AddNewProduct = () => {
           </div>
         </fieldset>
       )}
-      {/* {isShowDetail === true && (
-        <div
-          onClick={() => {
-            handleHideShow(false);
-          }}
-        >
-          Hide this form
-        </div>
-      )}
-
-      {isShowDetail === false && (
-        <div
-          onClick={() => {
-            handleHideShow(true);
-          }}
-        >
-          Show the form
-        </div>
-      )} */}
 
       {isShowDetail === true ? (
         <div
@@ -101,6 +98,11 @@ const AddNewProduct = () => {
           Show the form
         </div>
       )}
+
+      <div>
+        List products:
+        <div>{localStorage.getItem("productList")}</div>
+      </div>
     </div>
   );
 };

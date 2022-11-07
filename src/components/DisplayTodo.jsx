@@ -9,7 +9,6 @@ const DisplayTodo = (props) => {
     <div>
       <div>---- List Todo ---- </div>
       {listTodo.map((item, index) => {
-        console.log(">>> check item: ", item, index);
         return (
           <div key={item.id} onClick={() => deleteTodoFromChild(item.id)}>
             {item.name}
