@@ -1,21 +1,19 @@
 import { useState } from "react";
-
 const AddNewProduct = () => {
   const [name, setName] = useState("");
   const [price, setPrice] = useState(0);
   const [size, setSize] = useState(0);
   const [color, setColor] = useState("");
 
-  const [isShowDetail, setIsShowDetail] = useState(true);
+  const [isShowDetail, setIsShowDetail] = useState(false);
 
   const handleClickBtn = () => {
     let object = {
-      name,
-      price,
-      size,
-      color,
+      name1: name,
+      price: price,
+      size: size,
+      color: color,
     };
-
     let productList = localStorage.getItem("productList");
     if (productList) {
       let arr = JSON.parse(productList);
@@ -24,27 +22,21 @@ const AddNewProduct = () => {
     } else {
       localStorage.setItem("productList", JSON.stringify([object]));
     }
-
     setName("");
-    setSize(0);
     setPrice(0);
+    setSize(0);
     setColor("");
   };
-
   const handleHideShow = (status) => {
     setIsShowDetail(status);
   };
-
-  localStorage.setItem("name", "eric");
-  localStorage.setItem("channel", "duynghia");
-
   return (
     <div>
       {isShowDetail === true && (
         <fieldset>
-          <legend>Add New Product</legend>
+          <legend>Add A New Product</legend>
           <div className="input-product">
-            <label htmlFor="">Name:</label>
+            <label>Name:</label>
             <input
               value={name}
               type="text"
@@ -52,26 +44,26 @@ const AddNewProduct = () => {
             />
           </div>
           <div className="input-product">
-            <label htmlFor="">Price:</label>
+            <label>Price:</label>
             <input
-              type="text"
               value={price}
+              type="text"
               onChange={(event) => setPrice(event.target.value)}
             />
           </div>
           <div className="input-product">
-            <label htmlFor="">size:</label>
+            <label>Size:</label>
             <input
-              type="text"
               value={size}
+              type="text"
               onChange={(event) => setSize(event.target.value)}
             />
           </div>
           <div className="input-product">
-            <label htmlFor="">Color:</label>
+            <label>Color:</label>
             <input
-              type="text"
               value={color}
+              type="text"
               onChange={(event) => setColor(event.target.value)}
             />
           </div>
@@ -80,7 +72,6 @@ const AddNewProduct = () => {
           </div>
         </fieldset>
       )}
-
       {isShowDetail === true ? (
         <div
           onClick={() => {
@@ -98,7 +89,6 @@ const AddNewProduct = () => {
           Show the form
         </div>
       )}
-
       <div>
         List products:
         <div>{localStorage.getItem("productList")}</div>
@@ -106,5 +96,4 @@ const AddNewProduct = () => {
     </div>
   );
 };
-
 export default AddNewProduct;

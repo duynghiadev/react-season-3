@@ -7,12 +7,12 @@
   display: flex;
 
   .content-left {
-    width: 50%;
+    width: 20%;
     padding: 10px;
   }
 
   .content-right {
-    width: 50%;
+    width: 80%;
     padding: 10px;
     color: white;
   }
@@ -38,6 +38,11 @@
   /* justify-content    : center; */
   font-size: calc(10px + 2vmin);
   color: white;
+
+  span {
+    color: red;
+    font-size: 18px;
+  }
 }
 
 .App-link {
