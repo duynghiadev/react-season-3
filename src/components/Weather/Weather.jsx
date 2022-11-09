@@ -3,20 +3,18 @@ import axios from "axios";
 
 const Weather = () => {
   const [title, setTitle] = useState("");
+  useEffect(async () => {
+    console.log(">>> run use effect");
+    let response = await axios({
+      method: "post",
+      url: "https://test-react-hook-season-3.herokuapp.com/get-data-by-url",
+      data: { url: "https://www.metaweather.com/api/location/1236594/" },
+    });
+    console.log(">>> check data: ", response.data);
 
-  useEffect(() => {
-    async function fetchData() {
-      console.log(">>> run use effect");
-      let response = await axios({
-        method: "post",
-        url: "https://reacthook-hoidanit-backend.herokuapp.com/get-data-by-url",
-        data: { url: "https://www.metaweather.com/api/location/1236594/" },
-      });
-      setTimeout(() => {
-        setTitle(response.data.title);
-      }, 1000);
-    }
-    fetchData();
+    setTimeout(() => {
+      setTitle(response.data.title);
+    }, 1000);
   }, []);
 
   console.log(">> run render");
