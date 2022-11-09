@@ -16,14 +16,11 @@ const App = () => {
         <Route path="/" exact={true}>
           <div className="App">
             <header className="App-header content-left">
-              {" "}
-              inline
               <div style={{ textAlign: "center" }}>
-                {" "}
                 <img src={logo} className="App-logo" alt="logo" />
               </div>
               <p>
-                <span>Hello world React</span> with Eric
+                <span>Hello world React</span> with Boo
               </p>
               <Home />
             </header>
@@ -38,8 +35,11 @@ const App = () => {
         <Route path="/product">
           <Product />
         </Route>
+        <Route path="/weather">
+          <div>weather app</div>
+        </Route>
         <Route path="/about">
-          <div>I'm Eric</div>
+          <div>I'm Duy Nghia</div>
         </Route>
         <Route path="*">
           <div>404 Not Found!</div>
