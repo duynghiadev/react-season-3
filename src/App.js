@@ -7,6 +7,7 @@ import "react-image-lightbox/style.css";
 import Nav from "./components/Navigation/Nav";
 
 import { BrowserRouter as Router, Switch, Route, Link } from "react-router-dom";
+import Weather from "./components/Weather/Weather";
 
 const App = () => {
   return (
@@ -31,12 +32,11 @@ const App = () => {
             </div>
           </div>
         </Route>
-
         <Route path="/product">
           <Product />
         </Route>
         <Route path="/weather">
-          <div>weather app</div>
+          <Weather />
         </Route>
         <Route path="/about">
           <div>I'm Duy Nghia</div>
