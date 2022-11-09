@@ -5,6 +5,7 @@ import AddNewProduct from "./components/AddNewProduct";
 import Product from "./components/Products/Product";
 import "react-image-lightbox/style.css";
 import Nav from "./components/Navigation/Nav";
+
 import { BrowserRouter as Router, Switch, Route, Link } from "react-router-dom";
 
 const App = () => {
@@ -12,18 +13,17 @@ const App = () => {
     <Router>
       <Nav />
       <Switch>
-        <Route path="/about">
-          <Product />
-        </Route>
-        <Route path="/users">{/* <Users /> */}</Route>
-        <Route path="/">
+        <Route path="/" exact={true}>
           <div className="App">
             <header className="App-header content-left">
+              {" "}
+              inline
               <div style={{ textAlign: "center" }}>
+                {" "}
                 <img src={logo} className="App-logo" alt="logo" />
               </div>
               <p>
-                <span>Hello world React</span> with Boo
+                <span>Hello world React</span> with Eric
               </p>
               <Home />
             </header>
@@ -33,6 +33,16 @@ const App = () => {
               <Product />
             </div>
           </div>
+        </Route>
+
+        <Route path="/product">
+          <Product />
+        </Route>
+        <Route path="/about">
+          <div>I'm Eric</div>
+        </Route>
+        <Route path="*">
+          <div>404 Not Found!</div>
         </Route>
       </Switch>
     </Router>
