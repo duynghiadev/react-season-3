@@ -1,0 +1,31 @@
+{
+  "files": {
+    "main.css": "/react-season-3/static/css/main.1976fb17.chunk.css",
+    "main.js": "/react-season-3/static/js/main.71b9c3a0.chunk.js",
+    "main.js.map": "/react-season-3/static/js/main.71b9c3a0.chunk.js.map",
+    "runtime-main.js": "/react-season-3/static/js/runtime-main.434bc490.js",
+    "runtime-main.js.map": "/react-season-3/static/js/runtime-main.434bc490.js.map",
+    "static/css/2.ab18fb39.chunk.css": "/react-season-3/static/css/2.ab18fb39.chunk.css",
+    "static/js/2.35355911.chunk.js": "/react-season-3/static/js/2.35355911.chunk.js",
+    "static/js/2.35355911.chunk.js.map": "/react-season-3/static/js/2.35355911.chunk.js.map",
+    "static/js/3.0485618c.chunk.js": "/react-season-3/static/js/3.0485618c.chunk.js",
+    "static/js/3.0485618c.chunk.js.map": "/react-season-3/static/js/3.0485618c.chunk.js.map",
+    "index.html": "/react-season-3/index.html",
+    "static/css/2.ab18fb39.chunk.css.map": "/react-season-3/static/css/2.ab18fb39.chunk.css.map",
+    "static/css/main.1976fb17.chunk.css.map": "/react-season-3/static/css/main.1976fb17.chunk.css.map",
+    "static/js/2.35355911.chunk.js.LICENSE.txt": "/react-season-3/static/js/2.35355911.chunk.js.LICENSE.txt",
+    "static/media/logo.6ce24c58.svg": "/react-season-3/static/media/logo.6ce24c58.svg",
+    "static/media/snicker1.0abf908a.jpg": "/react-season-3/static/media/snicker1.0abf908a.jpg",
+    "static/media/snicker2.74470c4c.jpg": "/react-season-3/static/media/snicker2.74470c4c.jpg",
+    "static/media/snicker3.f7c0704a.jpg": "/react-season-3/static/media/snicker3.f7c0704a.jpg",
+    "static/media/snicker4.22a6debf.jpg": "/react-season-3/static/media/snicker4.22a6debf.jpg",
+    "static/media/Child.scss": "/react-season-3/static/media/windarrow.53136dda.svg"
+  },
+  "entrypoints": [
+    "static/js/runtime-main.434bc490.js",
+    "static/css/2.ab18fb39.chunk.css",
+    "static/js/2.35355911.chunk.js",
+    "static/css/main.1976fb17.chunk.css",
+    "static/js/main.71b9c3a0.chunk.js"
+  ]
+}
